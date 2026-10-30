@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 100 Yellow Note -->
+    <path
+        android:fillColor="#EAB308"
+        android:pathData="M 44,28 L 60,30 L 57,48 L 41,46 Z" />
+    <path
+        android:fillColor="#CA8A04"
+        android:pathData="M 47,33 L 53,34 L 52,41 L 46,40 Z" />
+
+    <!-- 200 Orange Note -->
+    <path
+        android:fillColor="#FB923C"
+        android:pathData="M 54,25 L 72,28 L 68,48 L 50,45 Z" />
+    <path
+        android:fillColor="#EA580C"
+        android:pathData="M 58,31 L 65,32 L 64,40 L 57,39 Z" />
+
+    <!-- 500 Green Note -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M 64,22 L 83,26 L 79,48 L 60,44 Z" />
+    <path
+        android:fillColor="#16A34A"
+        android:pathData="M 69,28 L 77,30 L 75,39 L 67,37 Z" />
+
+    <!-- Wallet Back Shadow -->
+    <path
+        android:fillColor="#1D4ED8"
+        android:pathData="M 28,40 H 80 A 6,6 0 0 1 86,46 V 78 A 6,6 0 0 1 80,84 H 28 A 6,6 0 0 1 22,78 V 46 A 6,6 0 0 1 28,40 Z" />
+
+    <!-- Main Wallet Body -->
+    <path
+        android:fillColor="#3B82F6"
+        android:pathData="M 28,42 H 78 A 6,6 0 0 1 84,48 V 78 A 6,6 0 0 1 78,84 H 28 A 6,6 0 0 1 22,78 V 48 A 6,6 0 0 1 28,42 Z" />
+
+    <!-- Wallet Top Accent Curve -->
+    <path
+        android:fillColor="#60A5FA"
+        android:pathData="M 24,48 Q 53,52 82,48 V 51 Q 53,55 24,51 Z" />
+
+    <!-- Wallet Flap Pocket -->
+    <path
+        android:fillColor="#2563EB"
+        android:pathData="M 22,54 Q 53,60 84,54 V 78 A 6,6 0 0 1 78,84 H 28 A 6,6 0 0 1 22,78 Z" />
+
+    <!-- Wallet Clasp Tab -->
+    <path
+        android:fillColor="#1E40AF"
+        android:pathData="M 66,57 H 85 A 5,5 0 0 1 90,62 V 68 A 5,5 0 0 1 85,73 H 66 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M 82,65 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
+
+</vector>

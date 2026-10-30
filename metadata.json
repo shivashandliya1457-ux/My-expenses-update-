@@ -1,0 +1,6 @@
+{
+  "name": "My Expenses Report",
+  "description": "Personal expense manager with Indian currency notes logo, Udhar debt tracking, monthly photo calendar, budget limits, biometric login, and detailed reports. Designed by Shiva Sharma.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
