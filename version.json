@@ -1,6 +1,8 @@
 {
-  "version": "2",
-  "versionCode": 2,
-  "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/My-Expenses-Report.apk",
-  "changelog": "New update available with bug fixes"
+  "versionCode": 3,
+  "versionName": "3.0",
+  "apkUrl": "https://raw.githubusercontent.com/shivashandliya1457-ux/version.json/main/My-Expenses-Report.apk",
+  "releaseNotes": "Login logout fixed, delete account permanent, data isolation fixed",
+  "releaseDate": "30 Oct 2026",
+  "forceUpdate": false
 }
