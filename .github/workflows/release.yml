@@ -13,10 +13,10 @@ jobs:
           java-version: '17'
       - name: Get Version
         run: echo "VN=$(jq -r .versionName version.json)" >> $GITHUB_ENV
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
       - name: Build APK
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleRelease
+        run: gradle assembleRelease
       - name: Release APK
         uses: softprops/action-gh-release@v2
         with:
