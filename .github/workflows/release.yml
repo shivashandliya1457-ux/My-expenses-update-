@@ -18,7 +18,7 @@ jobs:
         with:
           gradle-version: 9.3.1
       - name: Build APK
-        run: gradle assembleRelease
+        run: gradle assembleRelease --no-configuration-cache -Dorg.gradle.configuration-cache=false
       - name: Release APK
         uses: softprops/action-gh-release@v2
         with:
