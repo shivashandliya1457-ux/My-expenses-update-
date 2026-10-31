@@ -406,13 +406,12 @@ fun SettingsScreen(
                         title = "Share with Friends",
                         subtitle = "Share direct app download link",
                         onClick = {
+                            val appLink = "https://github.com/shivashandliya1457-ux/My-expenses-update-/releases/latest/download/app-release.apk"
                             val shareIntent = Intent().apply {
                                 action = Intent.ACTION_SEND
                                 type = "text/plain"
-                                putExtra(
-                                    Intent.EXTRA_TEXT,
-                                    "📊 My Expenses Report - Manage personal finances, monthly budgets, Udhar debts, and photo calendar privately & 100% offline.\n\n⬇️ Direct APK Download:\nhttps://raw.githubusercontent.com/shivashandliya1457-ux/version.json/main/My-Expenses-Report.apk"
-                                )
+                                putExtra(Intent.EXTRA_TITLE, "My Expenses App")
+                                putExtra(Intent.EXTRA_TEXT, "Download My Expenses App: $appLink")
                             }
                             context.startActivity(Intent.createChooser(shareIntent, "Share App"))
                         }

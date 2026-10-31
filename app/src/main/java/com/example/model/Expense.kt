@@ -35,7 +35,7 @@ data class AppConfig(
     val isDarkMode: Boolean = true,
     val isBiometricEnabled: Boolean = false,
     val lastBackupTimestamp: Long = 0L,
-    val updateServerUrl: String = "https://raw.githubusercontent.com/shivashandliya1457-ux/version.json/main/version.json",
+    val updateServerUrl: String = "https://raw.githubusercontent.com/shivashandliya1457-ux/My-expenses-update-/main/version.json",
     val autoCheckUpdates: Boolean = true
 )
 

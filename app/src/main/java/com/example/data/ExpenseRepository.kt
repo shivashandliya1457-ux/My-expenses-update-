@@ -69,7 +69,7 @@ class ExpenseRepository(context: Context) {
         val lastBackupKey = getConfigKey("cfg_last_backup")
         val updateUrlKey = getConfigKey("cfg_update_url")
         val autoUpdateKey = getConfigKey("cfg_auto_update")
-        val defaultUpdateUrl = "https://raw.githubusercontent.com/shivashandliya1457-ux/version.json/main/version.json"
+        val defaultUpdateUrl = "https://raw.githubusercontent.com/shivashandliya1457-ux/My-expenses-update-/main/version.json"
 
         val curr = prefs.getString(currKey, prefs.getString("cfg_currency", "₹")) ?: "₹"
         val budget = prefs.getFloat(budgetKey, prefs.getFloat("cfg_budget", 50000f)).toDouble()

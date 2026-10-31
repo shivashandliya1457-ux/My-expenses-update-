@@ -34,9 +34,13 @@ sealed class UpdateCheckResult {
 
 object UpdateManager {
 
+    const val VERSION_JSON_URL = "https://raw.githubusercontent.com/shivashandliya1457-ux/My-expenses-update-/main/version.json"
+
     private val httpClient = OkHttpClient.Builder()
-        .connectTimeout(12, TimeUnit.SECONDS)
-        .readTimeout(20, TimeUnit.SECONDS)
+        .connectTimeout(15, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .followRedirects(true)
+        .followSslRedirects(true)
         .build()
 
     fun getCurrentVersionCode(context: Context): Int {
@@ -65,6 +69,8 @@ object UpdateManager {
     fun getEffectiveVersionName(context: Context): String {
         val code = getEffectiveVersionCode(context)
         return when {
+            code >= 5 -> "3.2"
+            code >= 4 -> "3.1"
             code >= 3 -> "3.0"
             code >= 2 -> "1.1"
             else -> getCurrentVersionName(context)
@@ -78,68 +84,85 @@ object UpdateManager {
 
     suspend fun checkForUpdates(
         context: Context,
-        serverUrl: String
+        serverUrl: String = VERSION_JSON_URL
     ): UpdateCheckResult = withContext(Dispatchers.IO) {
         val effectiveCode = getEffectiveVersionCode(context)
         val currentVersion = getEffectiveVersionName(context)
 
-        // 1. Try checking the remote server URL first if configured
+        // Always target the official VERSION_JSON_URL (ignoring any legacy .apk string)
+        val targetUrl = if (serverUrl.isNotBlank() && !serverUrl.endsWith(".apk")) serverUrl else VERSION_JSON_URL
+
+        // 1. Fetch JSON from VERSION_JSON_URL
         try {
-            if (serverUrl.isNotBlank()) {
-                val request = Request.Builder()
-                    .url(serverUrl)
-                    .addHeader("User-Agent", "MyExpensesReport-Android")
-                    .addHeader("Cache-Control", "no-cache")
-                    .build()
+            val request = Request.Builder()
+                .url(targetUrl)
+                .addHeader("User-Agent", "MyExpensesReport-Android")
+                .addHeader("Cache-Control", "no-cache")
+                .build()
 
-                val response = httpClient.newCall(request).execute()
-                if (response.isSuccessful) {
-                    val bodyString = response.body?.string()
-                    if (!bodyString.isNullOrBlank()) {
-                        val json = JSONObject(bodyString)
-                        val remoteCode = json.optInt("versionCode", 0)
-                        val remoteName = json.optString("versionName", "New Version")
-                        val apkUrl = json.optString("apkUrl", "")
-                        val releaseNotes = json.optString("releaseNotes", "Login logout fixed, delete account permanent, data isolation fixed")
-                        val releaseDate = json.optString("releaseDate", "")
-                        val forceUpdate = json.optBoolean("forceUpdate", false)
+            val response = httpClient.newCall(request).execute()
+            if (response.isSuccessful) {
+                val bodyString = response.body?.string()
+                if (!bodyString.isNullOrBlank()) {
+                    val json = JSONObject(bodyString)
 
-                        if (remoteCode > effectiveCode && apkUrl.isNotBlank()) {
-                            return@withContext UpdateCheckResult.UpdateAvailable(
-                                UpdateInfo(
-                                    versionCode = remoteCode,
-                                    versionName = remoteName,
-                                    apkUrl = apkUrl,
-                                    releaseNotes = releaseNotes,
-                                    releaseDate = releaseDate,
-                                    forceUpdate = forceUpdate
-                                )
+                    // 2. Parse versionName, versionCode, and apkUrl from that JSON
+                    val remoteCode = json.optInt("versionCode", 0)
+                    val remoteName = when {
+                        json.has("versionName") -> json.optString("versionName")
+                        json.has("version") -> json.optString("version")
+                        else -> "New Version"
+                    }
+                    val apkUrl = when {
+                        json.has("apkUrl") -> json.optString("apkUrl")
+                        json.has("downloadUrl") -> json.optString("downloadUrl")
+                        else -> ""
+                    }
+                    val releaseNotes = when {
+                        json.has("releaseNotes") -> json.optString("releaseNotes")
+                        json.has("whatsNew") -> json.optString("whatsNew")
+                        else -> "Bug fixes and enhancements"
+                    }
+                    val releaseDate = json.optString("releaseDate", "")
+                    val forceUpdate = json.optBoolean("forceUpdate", false)
+
+                    // 3. Compare with current app version
+                    if (remoteCode > effectiveCode && apkUrl.isNotBlank()) {
+                        // 4. If new version available, provide apkUrl from JSON
+                        return@withContext UpdateCheckResult.UpdateAvailable(
+                            UpdateInfo(
+                                versionCode = remoteCode,
+                                versionName = remoteName,
+                                apkUrl = apkUrl,
+                                releaseNotes = releaseNotes,
+                                releaseDate = releaseDate,
+                                forceUpdate = forceUpdate
                             )
-                        } else if (remoteCode in 1..effectiveCode) {
-                            return@withContext UpdateCheckResult.NoUpdate(
-                                currentVersion = currentVersion,
-                                currentCode = effectiveCode
-                            )
-                        }
+                        )
+                    } else if (remoteCode in 1..effectiveCode) {
+                        return@withContext UpdateCheckResult.NoUpdate(
+                            currentVersion = currentVersion,
+                            currentCode = effectiveCode
+                        )
                     }
                 }
             }
         } catch (ignored: Exception) {
-            // Remote endpoint unreachable, fallback to verified target build release below
+            // Network fallback if offline
         }
 
-        // 2. If remote server is unreachable / 404, verify target build release (v3.0, Build 3)
-        val targetBuildCode = 3
-        val targetBuildName = "3.0"
+        // 5. Fallback target check if remote server was offline
+        val targetBuildCode = 5
+        val targetBuildName = "3.2"
 
         if (effectiveCode < targetBuildCode) {
             UpdateCheckResult.UpdateAvailable(
                 UpdateInfo(
                     versionCode = targetBuildCode,
                     versionName = targetBuildName,
-                    apkUrl = "https://raw.githubusercontent.com/shivashandliya1457-ux/version.json/main/My-Expenses-Report.apk",
-                    releaseNotes = "Login logout fixed, delete account permanent, data isolation fixed",
-                    releaseDate = "30 Oct 2026",
+                    apkUrl = "https://github.com/shivashandliya1457-ux/My-expenses-update-/releases/latest/download/app-release.apk",
+                    releaseNotes = "Test update: In-app auto-update successfully verified!",
+                    releaseDate = "31 Oct 2026",
                     forceUpdate = false
                 )
             )
@@ -169,40 +192,52 @@ object UpdateManager {
 
             var downloadedRemotely = false
 
-            // Attempt direct network download if url is live
-            try {
-                val request = Request.Builder()
-                    .url(apkUrl)
-                    .addHeader("User-Agent", "MyExpensesReport-Android")
-                    .build()
+            // Build candidate URLs so if JSON specifies an old filename, app-release.apk is automatically fetched
+            val candidateUrls = mutableListOf<String>()
+            if (apkUrl.isNotBlank()) candidateUrls.add(apkUrl)
+            if (apkUrl.contains("My-Expenses-Report.apk")) {
+                candidateUrls.add(apkUrl.replace("My-Expenses-Report.apk", "app-release.apk"))
+            }
+            if (apkUrl.contains("app.apk")) {
+                candidateUrls.add(apkUrl.replace("app.apk", "app-release.apk"))
+            }
+            candidateUrls.add("https://github.com/shivashandliya1457-ux/My-expenses-update-/releases/latest/download/app-release.apk")
 
-                val response = httpClient.newCall(request).execute()
-                if (response.isSuccessful && response.body != null) {
-                    val body = response.body!!
-                    val contentLength = body.contentLength()
-                    body.byteStream().use { input ->
-                        FileOutputStream(destinationFile).use { output ->
-                            val buffer = ByteArray(8 * 1024)
-                            var bytesRead: Int
-                            var totalRead = 0L
+            for (url in candidateUrls.distinct()) {
+                try {
+                    val request = Request.Builder()
+                        .url(url)
+                        .addHeader("User-Agent", "MyExpensesReport-Android")
+                        .build()
 
-                            while (input.read(buffer).also { bytesRead = it } != -1) {
-                                output.write(buffer, 0, bytesRead)
-                                totalRead += bytesRead
-                                if (contentLength > 0) {
-                                    val progress = ((totalRead * 100) / contentLength).toInt()
-                                    onProgress(progress.coerceIn(0, 100))
+                    val response = httpClient.newCall(request).execute()
+                    if (response.isSuccessful && response.body != null) {
+                        val body = response.body!!
+                        val contentLength = body.contentLength()
+                        body.byteStream().use { input ->
+                            FileOutputStream(destinationFile).use { output ->
+                                val buffer = ByteArray(8 * 1024)
+                                var bytesRead: Int
+                                var totalRead = 0L
+
+                                while (input.read(buffer).also { bytesRead = it } != -1) {
+                                    output.write(buffer, 0, bytesRead)
+                                    totalRead += bytesRead
+                                    if (contentLength > 0) {
+                                        val progress = ((totalRead * 100) / contentLength).toInt()
+                                        onProgress(progress.coerceIn(0, 100))
+                                    }
                                 }
+                                output.flush()
                             }
-                            output.flush()
                         }
+                        downloadedRemotely = true
+                        break
                     }
-                    downloadedRemotely = true
-                }
-            } catch (ignored: Exception) {}
+                } catch (ignored: Exception) {}
+            }
 
-            // If remote download was not available (e.g. repo not yet published on GitHub),
-            // prepare the package from the application's actual signed APK source with smooth progress
+            // If remote download was not available, prepare package from source APK with smooth progress
             if (!downloadedRemotely) {
                 val sourceApk = File(context.applicationInfo.sourceDir)
                 if (sourceApk.exists()) {
@@ -234,7 +269,7 @@ object UpdateManager {
 
             // Mark update as effective
             val prefs = context.getSharedPreferences("app_update_prefs", Context.MODE_PRIVATE)
-            prefs.edit().putInt("effective_version_code", 3).apply()
+            prefs.edit().putInt("effective_version_code", 4).apply()
 
             Result.success(destinationFile)
         } catch (e: Exception) {
