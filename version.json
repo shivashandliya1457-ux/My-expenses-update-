@@ -1,8 +1,8 @@
 {
-  "versionCode": 3,
-  "versionName": "3.0",
+  "versionCode": 4,
+  "versionName": "3.1",
   "apkUrl": "https://raw.githubusercontent.com/shivashandliya1457-ux/version.json/main/My-Expenses-Report.apk",
-  "releaseNotes": "Login logout fixed, delete account permanent, data isolation fixed",
-  "releaseDate": "30 Oct 2026",
+  "releaseNotes": "Test update - trail check",
+  "releaseDate": "31 Oct 2026",
   "forceUpdate": false
 }
