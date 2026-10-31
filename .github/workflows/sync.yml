@@ -8,23 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Read Version
         id: v
         run: |
           echo "VN=$(jq -r .versionName version.json)" >> $GITHUB_ENV
-
       - name: Sync to Public
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@github.com"
-          git clone https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/shivashandliya1457-ux/My-expenses-update-.git public
-          rsync -av --exclude='.git' --exclude='public' ./ public/
+          git clone https://${{ secrets.PAT_TOKEN }}@github.com/shivashandliya1457-ux/My-expenses-update-.git public
+          rsync -av --exclude='.git' --exclude='public/' ./ public/
           cd public
           git add .
           git commit -m "Sync v${{ env.VN }}" || echo "nothing"
           git push
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
