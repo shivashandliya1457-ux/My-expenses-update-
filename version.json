@@ -2,10 +2,10 @@
   "versionCode": 5,
   "versionName": "3.2",
   "version": "3.2",
-  "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/releases/latest/download/app-release.apk",
-  "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/releases/latest/download/app-release.apk",
-  "releaseNotes": "Test update: In-app auto-update successfully verified!",
-  "whatsNew": "Test update: In-app auto-update successfully verified!",
+  "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
+  "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
+  "releaseNotes": "Auto-update feature activated & verified!",
+  "whatsNew": "Auto-update feature activated & verified!",
   "releaseDate": "31 Oct 2026",
   "forceUpdate": false
 }
