@@ -1,11 +1,11 @@
 {
-  "versionCode": 6,
-  "versionName": "3.3",
-  "version": "3.3",
+  "versionCode": 7,
+  "versionName": "3.4",
+  "version": "3.4",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v3.3: Play Protect Safe build, Real random OTP, Indestructible persistent vault, Fixed scenic calendar backgrounds",
-  "whatsNew": "v3.3: Play Protect Safe build, Real random OTP, Indestructible persistent vault, Fixed scenic calendar backgrounds",
+  "releaseNotes": "v3.4: Dynamic version detection, Real random OTP, Indestructible persistent vault, Fixed scenic calendar backgrounds",
+  "whatsNew": "v3.4: Dynamic version detection, Real random OTP, Indestructible persistent vault, Fixed scenic calendar backgrounds",
   "releaseDate": "31 Oct 2026",
   "forceUpdate": false
 }
