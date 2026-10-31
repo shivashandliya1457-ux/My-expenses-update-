@@ -20,7 +20,7 @@ jobs:
       - name: Create dummy keystore
         run: keytool -genkey -v -keystore my-upload-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload -storepass android -keypass android -dname "CN=Test, OU=Test, O=Test, L=Test, S=Test, C=IN"
       - name: Build APK
-        run: gradle assembleRelease --no-configuration-cache -Dorg.gradle.configuration-cache=false
+        run: gradle assembleRelease --no-configuration-cache -Dorg.gradle.configuration-cache=false -Pandroid.injected.signing.store.file=$(pwd)/my-upload-key.jks -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=upload -Pandroid.injected.signing.key.password=android
       - name: Release APK
         uses: softprops/action-gh-release@v2
         with:
