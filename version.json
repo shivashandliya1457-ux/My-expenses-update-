@@ -1,11 +1,11 @@
 {
-  "versionCode": 8,
-  "versionName": "3.5",
-  "version": "3.5",
+  "versionCode": 9,
+  "versionName": "3.6",
+  "version": "3.6",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v3.5: Custom Category addition, 1-Min Auto-Lock protection, UPI App selection (GPay, PhonePe, Paytm, etc. + Other)",
-  "whatsNew": "v3.5: Custom Category addition, 1-Min Auto-Lock protection, UPI App selection (GPay, PhonePe, Paytm, etc. + Other)",
+  "releaseNotes": "v3.6: Multi-layer Indestructible Vault preserving users & expenses across uninstalls, +Category, 1-Min Auto-Lock, UPI App Selector",
+  "whatsNew": "v3.6: Multi-layer Indestructible Vault preserving users & expenses across uninstalls, +Category, 1-Min Auto-Lock, UPI App Selector",
   "releaseDate": "01 Nov 2026",
   "forceUpdate": false
 }
