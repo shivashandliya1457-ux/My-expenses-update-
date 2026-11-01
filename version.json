@@ -1,11 +1,11 @@
 {
-  "versionCode": 7,
-  "versionName": "3.4",
-  "version": "3.4",
+  "versionCode": 8,
+  "versionName": "3.5",
+  "version": "3.5",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v3.4: Dynamic version detection, Real random OTP, Indestructible persistent vault, Fixed scenic calendar backgrounds",
-  "whatsNew": "v3.4: Dynamic version detection, Real random OTP, Indestructible persistent vault, Fixed scenic calendar backgrounds",
-  "releaseDate": "31 Oct 2026",
+  "releaseNotes": "v3.5: Custom Category addition, 1-Min Auto-Lock protection, UPI App selection (GPay, PhonePe, Paytm, etc. + Other)",
+  "whatsNew": "v3.5: Custom Category addition, 1-Min Auto-Lock protection, UPI App selection (GPay, PhonePe, Paytm, etc. + Other)",
+  "releaseDate": "01 Nov 2026",
   "forceUpdate": false
 }
