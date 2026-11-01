@@ -1,11 +1,11 @@
 {
-  "versionCode": 9,
-  "versionName": "3.6",
-  "version": "3.6",
+  "versionCode": 10,
+  "versionName": "3.7",
+  "version": "3.7",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v3.6: Multi-layer Indestructible Vault preserving users & expenses across uninstalls, +Category, 1-Min Auto-Lock, UPI App Selector",
-  "whatsNew": "v3.6: Multi-layer Indestructible Vault preserving users & expenses across uninstalls, +Category, 1-Min Auto-Lock, UPI App Selector",
+  "releaseNotes": "v3.7: 100% Google Cloud Backup & Sync (Uninstall-safe account and expense restore), +Category, 1-Min Auto-Lock, UPI App Selector",
+  "whatsNew": "v3.7: 100% Google Cloud Backup & Sync (Uninstall-safe account and expense restore), +Category, 1-Min Auto-Lock, UPI App Selector",
   "releaseDate": "01 Nov 2026",
   "forceUpdate": false
 }
