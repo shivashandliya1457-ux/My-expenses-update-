@@ -1,11 +1,11 @@
 {
-  "versionCode": 11,
-  "versionName": "3.8",
-  "version": "3.8",
+  "versionCode": 12,
+  "versionName": "3.9",
+  "version": "3.9",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v3.8: Real Firebase Phone OTP Verification & Account Recovery across devices, zero-risk Play Store compliance",
-  "whatsNew": "v3.8: Real Firebase Phone OTP Verification & Account Recovery across devices, zero-risk Play Store compliance",
+  "releaseNotes": "v3.9: Fixed Mobile Number Real OTP generation & Firebase cloud linking with automated fallback engine",
+  "whatsNew": "v3.9: Fixed Mobile Number Real OTP generation & Firebase cloud linking with automated fallback engine",
   "releaseDate": "02 Nov 2026",
   "forceUpdate": false
 }
