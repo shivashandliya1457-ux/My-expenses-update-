@@ -1,11 +1,11 @@
 {
-  "versionCode": 10,
-  "versionName": "3.7",
-  "version": "3.7",
+  "versionCode": 11,
+  "versionName": "3.8",
+  "version": "3.8",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v3.7: 100% Google Cloud Backup & Sync (Uninstall-safe account and expense restore), +Category, 1-Min Auto-Lock, UPI App Selector",
-  "whatsNew": "v3.7: 100% Google Cloud Backup & Sync (Uninstall-safe account and expense restore), +Category, 1-Min Auto-Lock, UPI App Selector",
-  "releaseDate": "01 Nov 2026",
+  "releaseNotes": "v3.8: Real Firebase Phone OTP Verification & Account Recovery across devices, zero-risk Play Store compliance",
+  "whatsNew": "v3.8: Real Firebase Phone OTP Verification & Account Recovery across devices, zero-risk Play Store compliance",
+  "releaseDate": "02 Nov 2026",
   "forceUpdate": false
 }
