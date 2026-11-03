@@ -1,11 +1,11 @@
 {
-  "versionCode": 14,
-  "versionName": "4.1",
-  "version": "4.1",
+  "versionCode": 15,
+  "versionName": "4.2",
+  "version": "4.2",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v4.1: Direct Google (Gmail) 1-Click Sign-In, Startup in-app update popup, Real Telecom SMS OTP verification",
-  "whatsNew": "v4.1: Direct Google (Gmail) 1-Click Sign-In, Startup in-app update popup, Real Telecom SMS OTP verification",
-  "releaseDate": "02 Nov 2026",
+  "releaseNotes": "v4.2: 100% Real Google (Gmail) Verification, 1-Click Account Recovery, Instant Cloud Sync via Firebase Firestore, Removed Mobile OTP",
+  "whatsNew": "v4.2: 100% Real Google (Gmail) Verification, 1-Click Account Recovery, Instant Cloud Sync via Firebase Firestore, Removed Mobile OTP",
+  "releaseDate": "03 Nov 2026",
   "forceUpdate": true
 }

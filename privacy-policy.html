@@ -58,28 +58,27 @@
             <li><strong>Expense and Financial Records:</strong> Categories, amounts, notes, payment modes (Cash/UPI/Card), and debt records entered manually by you.</li>
             <li><strong>Authentication & Account Information:</strong>
                 <ul>
-                    <li>Username and encrypted password created by the user for local and cloud isolation.</li>
-                    <li>Optional Phone Number: Used strictly for real SMS OTP authentication and account recovery across devices.</li>
-                    <li>Optional Google Account (Email): Used strictly for Google Sign-In and cloud backup snapshot synchronization via Google Cloud Firestore.</li>
+                    <li>Username and encrypted password created by the user for local security isolation.</li>
+                    <li>Google Account (Gmail): Verified securely via Google Credential Manager & Google Firebase Authentication for authentic 1-click identity verification, account recovery, and Google Cloud Firestore data synchronization.</li>
                 </ul>
             </li>
             <li><strong>Biometric Data:</strong> If enabled, device fingerprint or screen lock verification is handled entirely by the local Android OS BiometricPrompt API. We do not collect, transmit, or store your biometric data.</li>
         </ul>
 
-        <h2>3. Real Phone Number & SMS OTP Policy (Strictly for User Verification Only)</h2>
+        <h2>3. Google Account (Gmail) Verification Policy (Strictly for User Verification Only)</h2>
         <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 8px; margin: 16px 0;">
             <p style="margin: 0; color: #166534; font-weight: 600;">
                 🔒 Zero Spam & Zero Marketing Guarantee / केवल असली यूजर वेरिफिकेशन के लिए:
             </p>
             <p style="margin: 6px 0 0; color: #14532d; font-size: 14px;">
-                We strictly collect and use the user's mobile number <strong>ONLY for authentic identity verification, fraud prevention, and cross-device account recovery via Real Telecom SMS OTP delivered directly to your default SMS Messaging App</strong>.
+                We strictly collect and use the user's verified Google (Gmail) account <strong>ONLY for authentic identity verification, account recovery, fraud prevention, and encrypted cloud synchronization via Google Cloud Firestore</strong>.
             </p>
         </div>
         <ul>
-            <li><strong>Exclusive Purpose:</strong> Mobile numbers are exclusively used for sending one-time verification SMS OTP codes via Google Firebase Authentication infrastructure to confirm user identity and protect expense books from unauthorized access.</li>
-            <li><strong>No Secondary Use:</strong> We NEVER use your mobile number for telemarketing, promotional SMS, automated spam calls, advertising, or cross-app profiling.</li>
-            <li><strong>No Third-Party Sharing:</strong> Your phone number is never sold, leased, or shared with data brokers, marketing agencies, or advertisers.</li>
-            <li><strong>Zero Device SMS Permissions:</strong> The app does NOT request or require any dangerous SMS read/write permissions (such as <code>READ_SMS</code> or <code>RECEIVE_SMS</code>). The real SMS is delivered by telecom carriers directly to your Android device's native SMS Messaging inbox, maintaining 100% Google Play Store security compliance.</li>
+            <li><strong>Exclusive Purpose:</strong> Your Gmail identity is verified cryptographically via Google Identity Services (Jetpack Credential Manager) and Google Firebase to confirm user identity and protect expense books from unauthorized access.</li>
+            <li><strong>No Secondary Use:</strong> We NEVER use your email address for marketing emails, newsletter spam, promotional campaigns, advertising, or cross-app profiling.</li>
+            <li><strong>No Third-Party Sharing:</strong> Your email address is never sold, leased, or shared with data brokers, marketing agencies, or advertisers.</li>
+            <li><strong>Zero Sensitive Permissions:</strong> The app does NOT request access to your Gmail inbox, emails, or Google Drive files. Only your public Google profile identity (email and name) is used for authentic user verification.</li>
         </ul>
 
         <h2>4. What We DO NOT Collect (Zero Sensitive Permissions)</h2>
