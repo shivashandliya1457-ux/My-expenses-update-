@@ -1,11 +1,11 @@
 {
-  "versionCode": 15,
-  "versionName": "4.2",
-  "version": "4.2",
+  "versionCode": 16,
+  "versionName": "4.3",
+  "version": "4.3",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v4.2: 100% Real Google (Gmail) Verification, 1-Click Account Recovery, Instant Cloud Sync via Firebase Firestore, Removed Mobile OTP",
-  "whatsNew": "v4.2: 100% Real Google (Gmail) Verification, 1-Click Account Recovery, Instant Cloud Sync via Firebase Firestore, Removed Mobile OTP",
-  "releaseDate": "03 Nov 2026",
+  "releaseNotes": "v4.3: Major Update - Added Trip Distribution & Travel Group Split Expense Calculator, Equal settlement algorithm with decimal precision, isolated private group tracking, and group recycle bin restore",
+  "whatsNew": "v4.3: Major Update - Added Trip Distribution & Travel Group Split Expense Calculator, Equal settlement algorithm with decimal precision, isolated private group tracking, and group recycle bin restore",
+  "releaseDate": "05 Nov 2026",
   "forceUpdate": true
 }
