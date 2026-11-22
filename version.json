@@ -1,11 +1,11 @@
 {
-  "versionCode": 16,
-  "versionName": "4.3",
-  "version": "4.3",
+  "versionCode": 17,
+  "versionName": "4.4",
+  "version": "4.4",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v4.3: Major Update - Added Trip Distribution & Travel Group Split Expense Calculator, Equal settlement algorithm with decimal precision, isolated private group tracking, and group recycle bin restore",
-  "whatsNew": "v4.3: Major Update - Added Trip Distribution & Travel Group Split Expense Calculator, Equal settlement algorithm with decimal precision, isolated private group tracking, and group recycle bin restore",
-  "releaseDate": "05 Nov 2026",
+  "releaseNotes": "v4.4: Added Borrowed Money (उधार लिया) section in Settings with Lender, Reason, Cash/UPI/Card/Net Banking, UPI App selector, Hindi & English labels, and full App & Google Cloud Backup integration",
+  "whatsNew": "v4.4: Added Borrowed Money (उधार लिया) section in Settings with Lender, Reason, Cash/UPI/Card/Net Banking, UPI App selector, Hindi & English labels, and full App & Google Cloud Backup integration",
+  "releaseDate": "22 Nov 2026",
   "forceUpdate": true
 }
