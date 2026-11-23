@@ -1,11 +1,11 @@
 {
-  "versionCode": 17,
-  "versionName": "4.4",
-  "version": "4.4",
+  "versionCode": 18,
+  "versionName": "4.5",
+  "version": "4.5",
   "apkUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
   "downloadUrl": "https://github.com/shivashandliya1457-ux/My-expenses-update-/raw/main/app.apk",
-  "releaseNotes": "v4.4: Added Borrowed Money (उधार लिया) section in Settings with Lender, Reason, Cash/UPI/Card/Net Banking, UPI App selector, Hindi & English labels, and full App & Google Cloud Backup integration",
-  "whatsNew": "v4.4: Added Borrowed Money (उधार लिया) section in Settings with Lender, Reason, Cash/UPI/Card/Net Banking, UPI App selector, Hindi & English labels, and full App & Google Cloud Backup integration",
-  "releaseDate": "22 Nov 2026",
+  "releaseNotes": "v4.5: Fixed Monthly & Yearly Expenses to show selected month/year accurately (0 if none) while keeping Total Expenses all-time; Added Month & Year quick picker; Added manual Monthly Credit & automatic Monthly Saving (Monthly Credit - Monthly Expenses) with full backup & cloud sync.",
+  "whatsNew": "v4.5: Fixed Monthly & Yearly Expenses to show selected month/year accurately (0 if none) while keeping Total Expenses all-time; Added Month & Year quick picker; Added manual Monthly Credit & automatic Monthly Saving (Monthly Credit - Monthly Expenses) with full backup & cloud sync.",
+  "releaseDate": "23 Nov 2026",
   "forceUpdate": true
 }
